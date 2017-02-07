@@ -9,22 +9,8 @@ export default class Gallery extends React.Component {
         super();
 
         this.state = {
-            "thumbnails": [
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-                <Image thumb="images/dummy.jpg" />,
-            ],
             "images": null,
-            "activeIndex": 0,
-            "canvas": null 
+            "activeIndex": 0
         }
 
         const Images = [
@@ -38,11 +24,9 @@ export default class Gallery extends React.Component {
             "http://lorempixel.com/1080/1920",
             "http://lorempixel.com/1920/1080",
             "http://lorempixel.com/1920/1080"
-        ].map((source, i) => <Image key={i} thumb={source} position={i} activeIndex={this.state.activeIndex} />);
+        ].map((source, i) => <Image key={i} thumb={source} position={i} />);
 
         this.state.images = Images;
-
-        this.state.canvas = <Canvas images={this.state.images} activeIndex={this.state.activeIndex} />
 
         this.handleLeftClick = this.handleLeftClick.bind(this);
         this.handleRightClick = this.handleRightClick.bind(this);
@@ -50,28 +34,19 @@ export default class Gallery extends React.Component {
     }
 
     handleLeftClick() {
-        let state = this.state;
-        
-        if(this.state.activeIndex > 0){
-            console.log('left');
+        if( this.state.activeIndex > 0 ){
+            let state = this.state;
             state.activeIndex--;
-            state.canvas = <Canvas images={state.images} activeIndex={state.activeIndex} />
-            this.setState(state);
+            this.setState(state)
         }
-
-        console.log(this.state);
     }
 
     handleRightClick() {
-        let state = this.state;
-        if( this.state.activeIndex < this.state.images.length) {
-            console.log('right');
+        if( this.state.activeIndex < this.state.images.length ) {
+            let state = this.state;
             state.activeIndex++;
-            state.canvas = <Canvas images={state.images} activeIndex={state.activeIndex} />
             this.setState(state);
         }
-
-        console.log(this.state);
     }
 
     render() {
@@ -83,7 +58,7 @@ export default class Gallery extends React.Component {
                 <div class="pg-arrow pg-right-arrow">
                     <Arrow direction="right" onClick={this.handleRightClick}/>
                 </div>
-                {this.state.canvas}
+                <Canvas images={this.state.images} activeIndex={this.state.activeIndex}/>
             </div>
         );
     }

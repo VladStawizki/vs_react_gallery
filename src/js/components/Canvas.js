@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Ceanvas extends React.Component {
+export default class Canvas extends React.Component {
     render() {
         const styles = { transform: `translate(-${this.props.activeIndex * 100}%, 0%` };
         return (
