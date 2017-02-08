@@ -1,7 +1,6 @@
 import React from "react";
 
 import Arrow from "./Arrow";
-import Image from "./Image";
 import Canvas from "./Canvas";
 
 export default class Gallery extends React.Component {
@@ -10,10 +9,10 @@ export default class Gallery extends React.Component {
 
         this.state = {
             "images": null,
-            "activeIndex": 0
+            "activeIndex": 3
         }
 
-        const Images = [
+        this.state.images = [
             "http://lorempixel.com/1920/1080",
             "http://lorempixel.com/1920/1080",
             "http://lorempixel.com/1080/1920",
@@ -24,10 +23,8 @@ export default class Gallery extends React.Component {
             "http://lorempixel.com/1080/1920",
             "http://lorempixel.com/1920/1080",
             "http://lorempixel.com/1920/1080"
-        ].map((source, i) => <Image key={i} thumb={source} position={i} />);
-
-        this.state.images = Images;
-
+        ];
+        
         this.handleLeftClick = this.handleLeftClick.bind(this);
         this.handleRightClick = this.handleRightClick.bind(this);
 
