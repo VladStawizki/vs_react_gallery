@@ -9,7 +9,9 @@ export default class Gallery extends React.Component {
 
         this.state = {
             "images": null,
-            "activeIndex": 3
+            "activeIndex": 0,
+            "leftArrowDisabled": true,
+            "rightArrowDisabled": false
         }
 
         this.state.images = [
@@ -24,24 +26,45 @@ export default class Gallery extends React.Component {
             "http://lorempixel.com/1920/1080",
             "http://lorempixel.com/1920/1080"
         ];
-        
+
         this.handleLeftClick = this.handleLeftClick.bind(this);
         this.handleRightClick = this.handleRightClick.bind(this);
 
     }
 
+    handleArrows(state) {
+        if (state.activeIndex == 0) {
+            state.leftArrowDisabled = true;
+            state.rightArrowDisabled = false;
+        } else {
+            state.leftArrowDisabled = false;
+            state.rightArrowDisabled = false;
+        }
+        if (state.activeIndex == state.images.length - 1) {
+            state.leftArrowDisabled = false;
+            state.rightArrowDisabled = true;
+        } else {
+            state.leftArrowDisabled = false;
+            state.rightArrowDisabled = false;
+        }
+    }
+
     handleLeftClick() {
-        if( this.state.activeIndex > 0 ){
+        if (this.state.activeIndex > 0) {
             let state = this.state;
             state.activeIndex--;
+            console.log('left click', state);
+            state = this.handleArrows(state);
             this.setState(state)
         }
     }
 
     handleRightClick() {
-        if( this.state.activeIndex < this.state.images.length ) {
+        if (this.state.activeIndex < this.state.images.length - 1) {
             let state = this.state;
             state.activeIndex++;
+            console.log('right click', state);
+            state = this.handleArrows(state);
             this.setState(state);
         }
     }
@@ -49,12 +72,8 @@ export default class Gallery extends React.Component {
     render() {
         return (
             <div class="pg-gallery">
-                <div class="pg-arrow pg-left-arrow">
-                    <Arrow direction="left" onClick={this.handleLeftClick}/>
-                </div>
-                <div class="pg-arrow pg-right-arrow">
-                    <Arrow direction="right" onClick={this.handleRightClick}/>
-                </div>
+                <Arrow direction="left" disabled={this.state.leftArrowDisabled} onClick={this.handleLeftClick}/>
+                <Arrow direction="right" disabled={this.state.rightArrowDisabled} onClick={this.handleRightClick}/>
                 <Canvas images={this.state.images} activeIndex={this.state.activeIndex}/>
             </div>
         );
