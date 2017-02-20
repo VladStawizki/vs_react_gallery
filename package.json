@@ -26,7 +26,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.1"
