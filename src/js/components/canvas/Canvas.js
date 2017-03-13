@@ -1,6 +1,7 @@
 import React from "react";
 
-import Image from "./Image";
+import Image from "../image/Image";
+import styles from "./Canvas.scss";
 
 export default class Canvas extends React.Component {
     render() {

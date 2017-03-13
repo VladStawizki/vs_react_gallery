@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Arrow.scss";
+
 export default class Arrow extends React.Component {
     render() {
         const src = "images/" + this.props.direction + "-arrow.svg";

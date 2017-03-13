@@ -1,7 +1,9 @@
 import React from "react";
 
-import Arrow from "./Arrow";
-import Canvas from "./Canvas";
+import Arrow from "../arrow/Arrow";
+import Canvas from "../canvas/Canvas";
+
+import styles from "./Gallery.scss";
 
 export default class Gallery extends React.Component {
     constructor() {

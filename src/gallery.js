@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Gallery from "./js/components/Gallery";
+import Gallery from "./js/components/gallery/Gallery";
 
 import styles from "./scss/index.scss";
 

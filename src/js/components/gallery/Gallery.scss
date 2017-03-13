@@ -1,0 +1,25 @@
+.pg-gallery {
+    position: relative;
+    height: 600px;
+    background-color: #212124;
+    overflow: hidden;
+}
+
+.pg-thumbnail {
+    height: 100%;
+    filter: blur(25px);
+}
+
+.pg-img-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scale(.5);
+    transition: transform .5s ease-out;
+}
+
+.pg-img-main {
+    transform: scale(1);
+    transition: transform .5s ease-out;
+}
+
