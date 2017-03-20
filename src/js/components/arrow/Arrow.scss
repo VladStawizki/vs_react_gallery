@@ -7,23 +7,22 @@
     height: 50px;
     z-index: 100;
     opacity: .3;
-}
 
+    &:hover, &:focus {
+        opacity: 1;
+        cursor: pointer;
+    }
 
-.pg-arrow:hover, .pg-arrow:focus {
-    opacity: 1;
-    cursor: pointer;
-}
+    &--left {
+        left: 0;
+    }
 
-.pg-disabled:hover, .pg-disabled:focus, .pg-disabled {
-    opacity: .3;
-    cursor: default;
-}
+    &--right {
+        right: 0;
+    }
 
-.pg-left-arrow {
-    left: 0;
-}
-
-.pg-right-arrow {
-    right: 0;
+    &--disabled, &--disabled:hover, &--disabled:focus {
+        opacity: .3;
+        cursor: default;
+    }
 }

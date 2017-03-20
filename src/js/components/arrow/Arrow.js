@@ -5,9 +5,9 @@ import styles from "./Arrow.scss";
 export default class Arrow extends React.Component {
     render() {
         const src = "images/" + this.props.direction + "-arrow.svg";
-        let className = "pg-arrow pg-" + this.props.direction + "-arrow";
+        let className = "pg-arrow pg-arrow--" + this.props.direction;
         if (this.props.disabled) {
-            className = className + " pg-disabled";
+            className = className + " pg-arrow--disabled";
         }
         return (
             <div class={className}>

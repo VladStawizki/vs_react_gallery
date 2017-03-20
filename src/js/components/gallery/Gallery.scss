@@ -1,7 +1,9 @@
+@import 'variables';
+
 .pg-gallery {
     position: relative;
-    height: 600px;
-    background-color: #212124;
+    height: $gallery-height;
+    background-color: $gallery-bg-color;
     overflow: hidden;
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "vs_react_gallery",
   "version": "1.0.0",
-  "description": "Great Gallery Modul",
+  "description": "Great Gallery React Component",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",

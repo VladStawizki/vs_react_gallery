@@ -25,7 +25,14 @@ module.exports = {
             {
                 test: /\.(sass|scss)$/,
                 exclude: [/node_modues/],
-                use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+                use: ExtractTextPlugin.extract(['css-loader', 
+                {
+                    loader: 'sass-loader',
+                    options: {
+                        includePaths: [path.resolve(__dirname, './src/scss')]
+                    }
+                }
+                ])
             }
         ]
     },
