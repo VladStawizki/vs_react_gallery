@@ -55,7 +55,6 @@ export default class Gallery extends React.Component {
         if (this.state.activeIndex > 0) {
             let state = this.state;
             state.activeIndex--;
-            console.log('left click', state);
             state = this.handleArrows(state);
             this.setState(state)
         }
@@ -65,7 +64,6 @@ export default class Gallery extends React.Component {
         if (this.state.activeIndex < this.state.images.length - 1) {
             let state = this.state;
             state.activeIndex++;
-            console.log('right click', state);
             state = this.handleArrows(state);
             this.setState(state);
         }
