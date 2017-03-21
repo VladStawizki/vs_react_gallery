@@ -1,7 +1,11 @@
 import React from "react";
+import keydown from "react-keydown";
+
 
 import Arrow from "../arrow/Arrow";
 import Canvas from "../canvas/Canvas";
+
+
 
 import styles from "./Gallery.scss";
 
@@ -51,6 +55,7 @@ export default class Gallery extends React.Component {
         }
     }
 
+    @keydown( 'left' ) 
     handleLeftClick() {
         if (this.state.activeIndex > 0) {
             let state = this.state;
@@ -60,6 +65,7 @@ export default class Gallery extends React.Component {
         }
     }
 
+    @keydown ( 'right' )
     handleRightClick() {
         if (this.state.activeIndex < this.state.images.length - 1) {
             let state = this.state;
@@ -69,11 +75,15 @@ export default class Gallery extends React.Component {
         }
     }
 
+    handleKeyPress(e){
+        console.log(e);
+    }
+
     render() {
         return (
             <div class="pg-gallery">
-                <Arrow direction="left" disabled={this.state.leftArrowDisabled} onClick={this.handleLeftClick}/>
-                <Arrow direction="right" disabled={this.state.rightArrowDisabled} onClick={this.handleRightClick}/>
+                <Arrow direction="left" disabled={this.state.leftArrowDisabled} onClick={this.handleLeftClick} onKeyPress={this.handleKeyPress}/>
+                <Arrow direction="right" disabled={this.state.rightArrowDisabled} onClick={this.handleRightClick} onKeyPress={this.handleKeyPress}/>
                 <Canvas images={this.state.images} activeIndex={this.state.activeIndex}/>
             </div>
         );
