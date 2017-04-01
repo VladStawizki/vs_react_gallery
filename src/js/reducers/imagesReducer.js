@@ -1,5 +1,4 @@
 export default function reducer(state = {
-    "fetching": false,
     "activeIndex": 0,
     "leftArrowDisabled": true,
     "rightArrowDisabled": false,
@@ -9,12 +8,30 @@ export default function reducer(state = {
         case "FETCH_IMAGES":
             {
                 return { ...state,
-                    fetching: true,
                     images: action.payload
                 };
             }
-        default:{
-            return state;
-        }
+        case "SLIDE_RIGHT":
+            {
+                return {
+                    ...state,
+                    activeIndex: state.activeIndex + 1,
+                    leftArrowDisabled: (state.activeIndex - 1 == 0),
+                    rightArrowDisabled: (state.activeIndex + 1 == state.images.images.length-1)
+                }
+            }
+        case "SLIDE_LEFT":
+            {
+                return {
+                    ...state,
+                    activeIndex: state.activeIndex - 1,
+                    leftArrowDisabled: (state.activeIndex - 1 == 0),
+                    rightArrowDisabled: (state.activeIndex + 1 == state.images.images.length-1),
+                }
+            }
+        default:
+            {
+                return state;
+            }
     }
 };
