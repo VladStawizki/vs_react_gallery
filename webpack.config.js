@@ -7,7 +7,7 @@ module.exports = {
     context: path.resolve(__dirname, './src'),
 
     entry: {
-        gallery: './gallery.js'
+        gallery: './gallery.jsx'
     },
 
     module: {

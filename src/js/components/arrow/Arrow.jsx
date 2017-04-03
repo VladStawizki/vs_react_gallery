@@ -11,7 +11,10 @@ export default class Arrow extends React.Component {
         }
         return (
             <div class={className}>
-                <img src={src} onClick={this.props.onClick} onKeyPress={this.props.onKeyPress} alt="" width="50" height="50"/>
+                <img src={src} 
+                    onClick={this.props.onClick} 
+                    onKeyPress={this.props.onKeyPress} 
+                    alt="" width="50" height="50"/>
             </div>
         );
     }
