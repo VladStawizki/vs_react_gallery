@@ -30,3 +30,11 @@ export function slideLeft() {
         });
     }
 }
+
+export function slidingDone() {
+    return (dispatch) => {
+        dispatch({
+            type: "SLIDING_DONE"
+        });
+    }
+}
