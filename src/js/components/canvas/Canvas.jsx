@@ -7,12 +7,14 @@ import styles from "./Canvas.scss";
 export default class Canvas extends React.Component {
     componentDidMount() {
         //workarount: react don't support native transitionend event
-        ReactDOM.findDOMNode(this).addEventListener("transitionend", this.props.afterAnimation, false);
+        ReactDOM.findDOMNode(this)
+            .addEventListener("transitionend", this.props.afterAnimation, false);
     }
 
     componentWillUnMount() {
         //workarount: react don't support native transitionend event
-        ReactDOM.findDOMNode(this).removeEventListener("transitionend", this.props.afterAnimation, false);
+        ReactDOM.findDOMNode(this)
+            .removeEventListener("transitionend", this.props.afterAnimation, false);
     }
 
     render() {
