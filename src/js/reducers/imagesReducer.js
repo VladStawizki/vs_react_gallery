@@ -14,11 +14,12 @@ export default function reducer(state = {
             }
         case "SLIDE_RIGHT":
             {
+                console.log(state.activeIndex);
                 return {
                     ...state,
                     sliding: true,
                     activeIndex: state.activeIndex + 1,
-                    leftArrowDisabled: (state.activeIndex - 1 == 0),
+                    leftArrowDisabled: (state.activeIndex + 1 == 0),
                     rightArrowDisabled: (state.activeIndex + 1 == state.images.images.length - 1)
                 }
             }
@@ -29,7 +30,7 @@ export default function reducer(state = {
                     sliding: true,
                     activeIndex: state.activeIndex - 1,
                     leftArrowDisabled: (state.activeIndex - 1 == 0),
-                    rightArrowDisabled: (state.activeIndex + 1 == state.images.images.length - 1),
+                    rightArrowDisabled: (state.activeIndex - 1 == state.images.images.length - 1),
                 }
             }
         case "SLIDING_DONE":
