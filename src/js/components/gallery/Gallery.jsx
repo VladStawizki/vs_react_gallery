@@ -38,7 +38,7 @@ export default class Gallery extends React.Component {
 
     @keydown('left')
     handleLeftClick() {
-        if (this.props.activeIndex - 1 > 0 && !this.props.sliding) {
+        if (this.props.activeIndex > 0 && !this.props.sliding) {
             this.props.dispatch(slideLeft());
         }
     }
