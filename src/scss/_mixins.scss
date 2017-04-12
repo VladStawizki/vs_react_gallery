@@ -1,0 +1,14 @@
+@import 'variables';
+
+
+@mixin mq-medium {
+  @media (min-width: #{$medium-width}) and (max-width: #{$large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin mq-large {
+  @media (min-width: #{$medium-width}) {
+    @content;
+  }
+}

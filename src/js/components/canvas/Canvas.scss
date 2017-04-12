@@ -1,10 +1,8 @@
 @import 'variables';
+@import 'mixins';
 .pg-canvas {
-    position: absolute;
-    left: 0;
-    width: 100%;
     height: 100%;
-    transition: $slide-transition;
+    transition: transform .5s ease-out;
     img {
         margin: auto;
         position: absolute;
@@ -14,5 +12,11 @@
         right: 0;
         max-height: $gallery-height;
         max-width: 100%;
+        @include mq-medium {
+            max-height: $gallery-height-medium;
+        }
+        @include mq-large {
+            max-height: $gallery-height-large;
+        }
     }
 }

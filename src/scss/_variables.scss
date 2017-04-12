@@ -1,9 +1,14 @@
 //colors
-
 $gallery-bg-color: #212124;
 
 //dimensions
-$gallery-height: 600px;
+$gallery-height: 450px;
+$gallery-height-medium: 550px;
+$gallery-height-large: 700px;
 
 //animations
 $slide-transition: transform .5s ease-out;
+
+//media queries
+$medium-width: 768px;
+$large-width: 1150px;

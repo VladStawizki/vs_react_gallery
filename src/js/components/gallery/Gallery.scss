@@ -1,10 +1,19 @@
 @import 'variables';
+@import 'mixins';
 
 .pg-gallery {
     position: relative;
     height: $gallery-height;
     background-color: $gallery-bg-color;
     overflow: hidden;
+
+    @include mq-medium {
+        height: $gallery-height-medium;
+    }
+    
+    @include mq-large {
+        height: $gallery-height-large;
+    }
 }
 
 .pg-thumbnail {
