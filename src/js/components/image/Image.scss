@@ -1,0 +1,11 @@
+@import "gallery-styles";
+
+.pg-img-description{
+    bottom: 0;
+    background-color: $gallery-bg-color-transparent;
+    color: white;
+    padding: $image-description-height/2 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}

@@ -14,7 +14,6 @@ export default function reducer(state = {
             }
         case "SLIDE_RIGHT":
             {
-                console.log(state.activeIndex);
                 return {
                     ...state,
                     sliding: true,

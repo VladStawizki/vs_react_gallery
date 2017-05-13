@@ -24,6 +24,7 @@ export default class Canvas extends React.Component {
             images = this.props.images.images.map(
                 (source, i) => <Image key={i}
                     src={source.main}
+                    description={source.description}
                     position={i}
                     activeIndex={this.props.activeIndex}
                 />

@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Image.scss";
+
 export default class Image extends React.Component {
     render() {
         let className = "pg-img-wrapper";
@@ -12,6 +14,7 @@ export default class Image extends React.Component {
         return (
             <div class={className} style={styles} data-active={this.props.activeIndex}>
                 <img src={this.props.src}/>
+                <span class="pg-img-description">{this.props.description}</span>
             </div>
         );
     }

@@ -1,13 +1,17 @@
 //colors
-$gallery-bg-color: #212124;
+
+$gallery-bg-color: rgba(33, 33, 36, 1);
+$gallery-bg-color-transparent: rgba(33, 33, 36, .6);
 
 //dimensions
+$image-description-height: 40px;
+
 $gallery-height: 450px;
 $gallery-height-medium: 550px;
 $gallery-height-large: 700px;
 
 //animations
-$slide-transition: transform .5s ease-out;
+$slide-transition: transform .5s ease-in;
 
 //media queries
 $medium-width: 768px;
