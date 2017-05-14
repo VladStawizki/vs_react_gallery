@@ -10,11 +10,17 @@ export default class Image extends React.Component {
         } else {
             className = "pg-img-wrapper";
         }
-        const styles = { left: this.props.position * 100 + '%' };
+        const position = { left: this.props.position * 100 + '%' };
+        
         return (
-            <div class={className} style={styles} data-active={this.props.activeIndex}>
+            <div class={className} style={position} data-active={this.props.activeIndex}>
                 <img src={this.props.src}/>
-                <span class="pg-img-description">{this.props.description}</span>
+                <span class="pg-img-description">
+                    {this.props.description} { " " }
+                    <a class="pg-img-link" href={this.props.link} target="_blank">
+                        {this.props.link}
+                    </a>
+                </span>
             </div>
         );
     }

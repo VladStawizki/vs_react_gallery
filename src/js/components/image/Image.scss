@@ -9,3 +9,13 @@
     text-align: center;
     width: 100%;
 }
+
+.pg-img-link {
+    color: white;
+    text-decoration: none;
+
+    &:hover, &:focus{
+        color: white;
+        text-decoration: underline;
+    }
+}

@@ -25,6 +25,7 @@ export default class Canvas extends React.Component {
                 (source, i) => <Image key={i}
                     src={source.main}
                     description={source.description}
+                    link={source.link}
                     position={i}
                     activeIndex={this.props.activeIndex}
                 />
