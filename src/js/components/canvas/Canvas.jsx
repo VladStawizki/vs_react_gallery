@@ -23,7 +23,7 @@ export default class Canvas extends React.Component {
             //images.images: json structure
             images = this.props.images.images.map(
                 (source, i) => <Image key={i}
-                    src={source.main}
+                    src={source.thumbnail}
                     description={source.description}
                     link={source.link}
                     position={i}

@@ -14,7 +14,7 @@ export default class Image extends React.Component {
         
         return (
             <div class={className} style={position} data-active={this.props.activeIndex}>
-                <img src={this.props.src}/>
+                <img class="pg-img-thumbnail" src={this.props.src}/>
                 <span class="pg-img-description">
                     {this.props.description} { " " }
                     <a class="pg-img-link" href={this.props.link} target="_blank">

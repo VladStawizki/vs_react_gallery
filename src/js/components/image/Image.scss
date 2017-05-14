@@ -1,5 +1,10 @@
 @import "gallery-styles";
 
+.pg-img-thumbnail {
+    height: 100%;
+    filter: blur(25px);
+}
+
 .pg-img-description{
     bottom: 0;
     background-color: $gallery-bg-color-transparent;
